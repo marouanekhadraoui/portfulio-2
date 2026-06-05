@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+<h1>Messages Dashboard</h1>
+<div id="list"></div>
+
+<script>
+async function loadMessages() {
+  const res = await fetch("http://localhost:5000/api/contact/all");
+  const data = await res.json();
+
+  document.getElementById("list").innerHTML = data.map(m => `
+    <div style="padding:10px;border:1px solid #ccc;margin:10px">
+      <b>${m.firstName} ${m.lastName}</b><br/>
+      ${m.email}<br/>
+      ${m.message}
+    </div>
+  `).join('');
+}
+
+loadMessages();
+</script>
+</body>
+</html>

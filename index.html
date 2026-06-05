@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAROUANE KHADRAOUI — AI Engineer & Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient background layers -->
+  <div class="bg-layer bg-grid" aria-hidden="true"></div>
+  <div class="bg-layer bg-glow bg-glow--top" aria-hidden="true"></div>
+  <div class="bg-layer bg-glow bg-glow--bottom" aria-hidden="true"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <main class="page-wrapper">
+
+    <!-- ═══════════════════════════════════════
+         HEADER BAND
+    ═══════════════════════════════════════ -->
+    <header class="site-header">
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Open to international &amp; remote roles</span>
+      </div>
+
+      <div class="header-title-block">
+        <h1 class="name-title" id="typewriter-target">
+          <span class="name-first">MAROUANE</span>
+        </h1>
+        <p class="name-full">Abdelkader Khadraoui</p>
+        <p class="name-roles">
+          <span>AI Engineer</span>
+          <span class="sep">|</span>
+          <span>Full-Stack Developer</span>
+          <span class="sep">|</span>
+          <span>SaaS Builder</span>
+          <span class="sep">|</span>
+          <span>ML Systems Developer</span>
+        </p>
+        <p class="name-sub">— 3RD-YEAR CS ENGINEERING · AI &amp; ML SPECIALIZATION · SIDI BEL ABBÈS, ALGERIA —</p>
+      </div>
+
+      <div class="header-socials">
+        <a href="https://github.com/marouanekhadraoui" target="_blank" rel="noopener noreferrer" class="social-chip" aria-label="GitHub">
+          <!-- GitHub icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/khadraouimarouane" target="_blank" rel="noopener noreferrer" class="social-chip" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:khadraouimarouane436@gmail.com" class="social-chip" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════
+         MAIN CONTENT GRID
+    ═══════════════════════════════════════ -->
+    <section class="content-grid">
+
+      <!-- ── LEFT COLUMN ── -->
+      <aside class="col-left">
+
+        <!-- Profile photo card -->
+        <div class="photo-card" id="photo-card">
+          <div class="photo-frame">
+            <img
+              src="image.png"
+              alt="Marouane — Professional Portrait"
+              class="profile-img"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+            <!-- Fallback avatar if no image provided -->
+            <div class="avatar-placeholder" aria-hidden="true">
+              <svg viewBox="0 0 80 80" fill="none">
+                <circle cx="40" cy="30" r="18" fill="var(--accent)" opacity=".25"/>
+                <ellipse cx="40" cy="66" rx="26" ry="16" fill="var(--accent)" opacity=".15"/>
+                <circle cx="40" cy="30" r="16" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+                <ellipse cx="40" cy="66" rx="24" ry="14" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+              </svg>
+              <p>Add Profile Photo</p>
+            </div>
+          </div>
+          <!-- Holographic overlay rings -->
+          <div class="photo-ring photo-ring--1" aria-hidden="true"></div>
+          <div class="photo-ring photo-ring--2" aria-hidden="true"></div>
+          <!-- Scan line effect -->
+          <div class="scan-line" aria-hidden="true"></div>
+        </div>
+
+        <!-- About Me card -->
+        <article class="card card--about" data-reveal>
+          <div class="card-label">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+            About Me
+          </div>
+          <p class="about-text">
+            Third-year Computer Science Engineering student specializing in Artificial Intelligence &amp; Machine Learning, with a strong foundation in full-stack development and scalable software systems. Passionate about building intelligent systems, SaaS platforms, and automation solutions — with proven execution in hackathons, competitive innovation, and real-world engineering projects. Execution-focused engineer with leadership mindset, targeting global tech companies and impactful startups.
+          </p>
+        </article>
+
+        <!-- Education card -->
+        <article class="card card--education" data-reveal>
+          <div class="card-label">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
+            Education
+          </div>
+          <div class="edu-block">
+            <p class="edu-degree">Computer Science Engineering — 3rd Year</p>
+            <p class="edu-spec">Specialization: AI &amp; Machine Learning / Software Engineering</p>
+            <div class="edu-tags">
+              <span class="edu-tag">Data Structures</span>
+              <span class="edu-tag">ML Basics</span>
+              <span class="edu-tag">REST APIs</span>
+              <span class="edu-tag">Databases</span>
+              <span class="edu-tag">System Design</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Leadership card -->
+        <article class="card card--leadership" data-reveal>
+          <div class="card-label">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Leadership
+          </div>
+          <div class="lead-item">
+            <strong>Core Member — BYTEX Scientific Club</strong>
+            <span>Technical direction, innovation projects &amp; team coordination</span>
+          </div>
+        </article>
+
+        <!-- Languages card -->
+        <article class="card card--languages" data-reveal>
+          <div class="card-label">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Languages
+          </div>
+          <div class="lang-list">
+            <div class="lang-item"><span class="lang-name">Arabic</span><span class="lang-level">Native</span></div>
+            <div class="lang-item"><span class="lang-name">French</span><span class="lang-level">Professional</span></div>
+            <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">Advanced Technical</span></div>
+          </div>
+        </article>
+
+        <!-- Personality Traits card -->
+        <article class="card card--traits" data-reveal>
+          <div class="card-label">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Personality Traits
+          </div>
+          <div class="traits-grid">
+            <span class="trait">Problem Solving</span>
+            <span class="trait">Leadership</span>
+            <span class="trait">Fast Learner</span>
+            <span class="trait">Critical Thinking</span>
+            <span class="trait">Startup Mindset</span>
+            <span class="trait">Team Coordination</span>
+            <span class="trait">Adaptability</span>
+            <span class="trait">Public Speaking</span>
+          </div>
+        </article>
+
+        <!-- Vision card -->
+        <article class="card card--vision" data-reveal>
+          <div class="vision-quote-mark">"</div>
+          <blockquote class="vision-text">
+            To build world-class AI products, engineer scalable SaaS platforms, and contribute to the future of intelligent systems — at global tech companies or through impactful startups.
+          </blockquote>
+          <footer class="vision-footer">— Vision Statement</footer>
+        </article>
+
+      </aside>
+
+      <!-- ── RIGHT COLUMN ── -->
+      <div class="col-right">
+
+        <!-- Skills card -->
+        <article class="card card--skills" data-reveal>
+          <div class="card-label">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Skills
+          </div>
+          <div class="skills-categories">
+            <div class="skill-cat">
+              <span class="skill-cat-label">Languages</span>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">C#</span>
+              </div>
+            </div>
+            <div class="skill-cat">
+              <span class="skill-cat-label">Frontend</span>
+              <div class="skill-tags">
+                <span class="skill-tag">React.js</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">Tailwind CSS</span>
+                <span class="skill-tag">Flutter UI</span>
+              </div>
+            </div>
+            <div class="skill-cat">
+              <span class="skill-cat-label">Backend</span>
+              <div class="skill-tags">
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Express.js</span>
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">Microservices</span>
+              </div>
+            </div>
+            <div class="skill-cat">
+              <span class="skill-cat-label">AI / ML</span>
+              <div class="skill-tags">
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">NLP</span>
+                <span class="skill-tag">Model Training</span>
+              </div>
+            </div>
+            <div class="skill-cat">
+              <span class="skill-cat-label">Data &amp; Tools</span>
+              <div class="skill-tags">
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Postman</span>
+                <span class="skill-tag">Linux</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projects card -->
+        <article class="card card--projects" data-reveal>
+          <div class="card-label">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            Projects
+          </div>
+
+          <!-- Timeline row -->
+          <div class="timeline-track" role="list">
+            <div class="tl-line" aria-hidden="true">
+              <div class="tl-progress"></div>
+            </div>
+
+            <div class="tl-node" role="listitem" data-index="1">
+              <div class="tl-dot" aria-hidden="true">
+                <span class="tl-dot-inner"></span>
+                <span class="tl-dot-pulse"></span>
+              </div>
+              <div class="tl-content">
+                <div class="tl-number">01</div>
+                <div class="tl-title">AI Invoice Intelligence &amp; Automation</div>
+                <div class="tl-stack">Python · TensorFlow · OCR · REST API</div>
+                <div class="tl-desc">AI system extracting &amp; structuring financial data for business automation.</div>
+              </div>
+            </div>
+
+            <div class="tl-node" role="listitem" data-index="2">
+              <div class="tl-dot" aria-hidden="true">
+                <span class="tl-dot-inner"></span>
+                <span class="tl-dot-pulse"></span>
+              </div>
+              <div class="tl-content">
+                <div class="tl-number">02</div>
+                <div class="tl-title">MemoSchool — Alzheimer &amp; Memory Assistance</div>
+                <div class="tl-stack">Flutter · AI · Cognitive Support</div>
+                <div class="tl-desc">Medical AI app for memory training — reached national competition finals.</div>
+              </div>
+            </div>
+
+            <div class="tl-node" role="listitem" data-index="3">
+              <div class="tl-dot" aria-hidden="true">
+                <span class="tl-dot-inner"></span>
+                <span class="tl-dot-pulse"></span>
+              </div>
+              <div class="tl-content">
+                <div class="tl-number">03</div>
+                <div class="tl-title">SefarShops — E-commerce Platform</div>
+                <div class="tl-stack">Node.js · React · MongoDB · REST</div>
+                <div class="tl-desc">Full-stack commercial platform with scalable backend architecture.</div>
+              </div>
+            </div>
+
+            <div class="tl-node" role="listitem" data-index="4">
+              <div class="tl-dot" aria-hidden="true">
+                <span class="tl-dot-inner"></span>
+                <span class="tl-dot-pulse"></span>
+              </div>
+              <div class="tl-content">
+                <div class="tl-number">04</div>
+                <div class="tl-title">Drag-and-Drop SaaS UI Builder</div>
+                <div class="tl-stack">React · TypeScript · Code Generation</div>
+                <div class="tl-desc">Visual no-code builder generating production-ready frontend code.</div>
+              </div>
+            </div>
+
+            <div class="tl-node" role="listitem" data-index="5">
+              <div class="tl-dot tl-dot--last" aria-hidden="true">
+                <span class="tl-dot-inner"></span>
+                <span class="tl-dot-pulse"></span>
+              </div>
+              <div class="tl-content">
+                <div class="tl-number">05</div>
+                <div class="tl-title">AI Customer Review Analyzer</div>
+                <div class="tl-stack">Python · NLP · Sentiment Analysis</div>
+                <div class="tl-desc">ML engine for automated review analysis and business insights.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Experience card -->
+        <article class="card card--experience" data-reveal>
+          <div class="card-label">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            Experience
+          </div>
+          <div class="exp-list">
+            <div class="exp-item">
+              <strong>Freelance Web &amp; Software Development</strong>
+              <span>Client projects — full-stack web apps, APIs &amp; automation tools</span>
+            </div>
+            <div class="exp-item">
+              <strong>University Engineering Projects</strong>
+              <span>Advanced AI/ML &amp; software systems — team-based implementations</span>
+            </div>
+            <div class="exp-item">
+              <strong>Personal SaaS &amp; AI Systems</strong>
+              <span>End-to-end product development — from architecture to deployment</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Achievements card -->
+        <article class="card card--achievements" data-reveal>
+          <div class="card-label">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5-2-2-5 2 2-5-2-2 5 2 2-5 2 5 5-2-2 2 2 5-5-2z"/><circle cx="12" cy="8" r="5"/></svg>
+            Achievements
+          </div>
+
+          <div class="achievements-list">
+            <div class="ach-item">
+              <div class="ach-check" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="var(--accent)" stroke-width="1"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="ach-text">
+                <strong>MemoSchool — National Competition Finals</strong>
+                <span>AI-powered memory assistance app — innovation &amp; social impact</span>
+              </div>
+            </div>
+            <div class="ach-item">
+              <div class="ach-check" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="var(--accent)" stroke-width="1"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="ach-text">
+                <strong>Huawei ICT Competition — Participant</strong>
+                <span>Competitive problem-solving in ICT &amp; networking challenges</span>
+              </div>
+            </div>
+            <div class="ach-item">
+              <div class="ach-check" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="var(--accent)" stroke-width="1"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="ach-text">
+                <strong>Hackathon Marathon &amp; Dubai Creative Hackathon</strong>
+                <span>International exposure — team collaboration under pressure</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /col-right -->
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CONTACT SECTION
+    ═══════════════════════════════════════ -->
+    <section class="contact-section" id="contact" data-reveal>
+
+      <!-- Terminal-style section header -->
+      <div class="contact-header">
+        <div class="terminal-bar">
+          <span class="tb-dot tb-dot--red"></span>
+          <span class="tb-dot tb-dot--yellow"></span>
+          <span class="tb-dot tb-dot--green"></span>
+          <span class="tb-title">marouane@portfolio:~$ contact --init</span>
+          <span class="tb-cursor">▋</span>
+        </div>
+        <h2 class="contact-title">
+          <span class="ct-label">// GET IN TOUCH</span>
+          <span class="ct-line"></span>
+        </h2>
+        <p class="contact-desc">
+          Have a project, opportunity, or idea? Drop a message — I respond within 24 hours.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- LEFT — info panel -->
+        <aside class="contact-info">
+
+          <div class="ci-block">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <p class="ci-label">Email</p>
+              <p class="ci-value"><a href="mailto:khadraouimarouane436@gmail.com">khadraouimarouane436@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="ci-block">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="ci-label">Location</p>
+              <p class="ci-value">Sidi Bel Abbès, Algeria</p>
+            </div>
+          </div>
+
+          <div class="ci-block">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <p class="ci-label">Response Time</p>
+              <p class="ci-value">Within 24 hours</p>
+            </div>
+          </div>
+
+          <!-- Status indicator -->
+          <div class="ci-status">
+            <span class="status-dot"></span>
+            <span>Currently available for new projects</span>
+          </div>
+
+          <!-- Math decoration -->
+          <div class="ci-math" aria-hidden="true">
+            <div class="math-line">∇f(x) = <span class="math-accent">∂f/∂x</span></div>
+            <div class="math-line">σ(z) = <span class="math-accent">1/(1+e⁻ᶻ)</span></div>
+            <div class="math-line">P(A|B) = <span class="math-accent">P(B|A)·P(A)/P(B)</span></div>
+          </div>
+
+        </aside>
+
+        <!-- RIGHT — form -->
+        <div class="contact-form-wrap">
+
+          <!-- Form header bar -->
+          <div class="form-header-bar">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>new_message.js</span>
+            <span class="fhb-dot"></span>
+            <span class="fhb-unsaved">unsaved</span>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+
+            <!-- Honeypot — hidden from users, catches bots -->
+            <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp-field" />
+
+            <!-- Row: First name + Last name -->
+            <div class="form-row">
+              <div class="form-group" id="fg-firstname">
+                <label class="form-label" for="firstname">
+                  <span class="label-comment">// </span>First Name
+                  <span class="label-required">*</span>
+                </label>
+                <div class="input-wrap">
+                  <span class="input-prefix">›</span>
+                  <input
+                    type="text"
+                    id="firstname"
+                    name="firstname"
+                    class="form-input"
+                    placeholder="e.g. Marouane"
+                    autocomplete="given-name"
+                    required
+                    minlength="2"
+                  />
+                  <span class="input-status"></span>
+                </div>
+                <p class="form-error" role="alert"></p>
+              </div>
+
+              <div class="form-group" id="fg-lastname">
+                <label class="form-label" for="lastname">
+                  <span class="label-comment">// </span>Last Name
+                  <span class="label-required">*</span>
+                </label>
+                <div class="input-wrap">
+                  <span class="input-prefix">›</span>
+                  <input
+                    type="text"
+                    id="lastname"
+                    name="lastname"
+                    class="form-input"
+                    placeholder="e.g. Benali"
+                    autocomplete="family-name"
+                    required
+                    minlength="2"
+                  />
+                  <span class="input-status"></span>
+                </div>
+                <p class="form-error" role="alert"></p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group" id="fg-email">
+              <label class="form-label" for="email">
+                <span class="label-comment">// </span>Email Address
+                <span class="label-required">*</span>
+              </label>
+              <div class="input-wrap">
+                <span class="input-prefix">›</span>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                />
+                <span class="input-status"></span>
+              </div>
+              <p class="form-error" role="alert"></p>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-group" id="fg-subject">
+              <label class="form-label" for="subject">
+                <span class="label-comment">// </span>Subject
+              </label>
+              <div class="input-wrap">
+                <span class="input-prefix">›</span>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="form-input"
+                  placeholder="Project idea, collaboration, hiring…"
+                />
+                <span class="input-status"></span>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group" id="fg-message">
+              <label class="form-label" for="message">
+                <span class="label-comment">// </span>Message
+                <span class="label-required">*</span>
+              </label>
+              <div class="input-wrap textarea-wrap">
+                <span class="input-prefix textarea-prefix">›</span>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-input form-textarea"
+                  placeholder="Describe your project, opportunity, or idea in detail…"
+                  rows="5"
+                  required
+                  minlength="20"
+                ></textarea>
+                <span class="char-counter" id="charCounter">0 / 500</span>
+              </div>
+              <p class="form-error" role="alert"></p>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <span class="submit-btn-inner">
+                <span class="submit-text">Send Message</span>
+                <span class="submit-loading" aria-hidden="true">
+                  <span class="spinner"></span>
+                  Sending…
+                </span>
+                <svg class="submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </span>
+              <span class="submit-glow" aria-hidden="true"></span>
+            </button>
+
+            <!-- Success / Error feedback -->
+            <div class="form-feedback form-feedback--success" id="formSuccess" role="status" aria-live="polite">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <div>
+                <strong>Message sent successfully!</strong>
+                <p>Thank you. I'll get back to you within 24 hours.</p>
+              </div>
+            </div>
+
+            <div class="form-feedback form-feedback--error" id="formError" role="alert" aria-live="assertive">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <div>
+                <strong>Something went wrong.</strong>
+                <p id="formErrorMsg">Please check your details and try again.</p>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+      </div><!-- /contact-grid -->
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════ -->
+    <footer class="site-footer">
+      <div class="footer-line"></div>
+      <div class="footer-inner">
+        <span class="footer-copy">© 2026 MAROUANE KHADRAOUI · Sidi Bel Abbès, Algeria</span>
+        <span class="footer-mono">AI Engineer · Full-Stack Developer · Open to Relocation</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
