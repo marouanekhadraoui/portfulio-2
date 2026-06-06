@@ -39,18 +39,27 @@ const validateContact = (req, res, next) => {
 router.post('/', validateContact, async (req, res) => {
   try {
     const msg = await Message.create(req.body);
-    const emailResult = await sendEmail(req.body);
 
-    res.status(201).json({
+    let emailResult = { provider: 'none' };
+
+    try {
+      emailResult = await sendEmail(req.body);
+    } catch (emailErr) {
+      console.error("Email failed but message saved:", emailErr);
+    }
+
+    return res.status(201).json({
       success: true,
       message: 'Message sent successfully.',
       data: { id: msg._id, emailProvider: emailResult.provider },
     });
+
   } catch (err) {
     console.error('Contact error:', err);
-    res.status(500).json({
+
+    return res.status(500).json({
       success: false,
-      message: err.message || 'Failed to send message. Please try again later.',
+      message: err.message || 'Server error',
     });
   }
 });
