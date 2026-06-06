@@ -408,7 +408,7 @@
   /* ── API base URL ──────────────────────────── */
   const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:5000'
-    : window.location.origin;
+    : 'https://portfolio-backend-qtrl.onrender.com';
 
   /* ── Submit ────────────────────────────────── */
   form.addEventListener('submit', async (e) => {
@@ -435,7 +435,16 @@
         body: JSON.stringify(payload),
       });
 
-      const data = await res.json();
+      // ✅ FIX: Check Content-Type before parsing JSON
+      const contentType = res.headers.get('content-type');
+      let data;
+      
+      if (contentType && contentType.includes('application/json')) {
+        data = await res.json();
+      } else {
+        // Backend returned HTML or non-JSON response
+        throw new Error(`Backend returned ${res.status} with content-type: ${contentType || 'unknown'}. Expected JSON. Response: ${await res.text()}`);
+      }
 
       if (!res.ok || !data.success) {
         throw new Error(data.message || 'Failed to send message');
@@ -466,5 +475,4 @@
   }
 
 })();
-
 
